@@ -17,7 +17,7 @@ export default function useTaiwanStockNews(ticker, token = null) {
       url: process.env.GithubPages
         ? corsProxy + encodeURIComponent('https://api.finmindtrade.com/api/v4/data' + paramsStr)
         : '/api/stock' + paramsStr,
-      timeout: 8000,
+      timeout: 30000,
       headers: { 'content-type': 'application/x-www-form-urlencoded', accept: 'application / json' },
     },
     [ticker],
