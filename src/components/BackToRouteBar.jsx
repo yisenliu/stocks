@@ -32,7 +32,7 @@ export default function BackToRouteBar({ to, stock_id, title }) {
       <IconButton onClick={goBack} aria-label="back to the previous route" sx={{ color: 'white' }}>
         <ArrowBackIcon />
       </IconButton>
-      <h2 className="text-lg leading-tight text-white">
+      <h2 className="text-lg leading-tight text-white truncate">
         {stock_id && <small className="block">{stock_id}</small>}
         {title}
       </h2>
