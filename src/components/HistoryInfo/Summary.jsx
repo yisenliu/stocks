@@ -6,8 +6,8 @@ export default function Summary({ currentDurationLabel = null, currentValue, sta
   };
   const fromTopDown = parseFloat((currentValue / max - 1) * 100).toFixed(2);
   return (
-    <>
-      <ul className="gap-x-2 inline-grid justify-center grid-cols-[repeat(3,auto)] text-white">
+    <div className="w-full overflow-x-auto">
+      <ul className="gap-x-2 inline-grid justify-center grid-cols-[repeat(3,auto)] text-white *:whitespace-nowrap">
         <li className="col-span-full">
           <p className="mx-2 text-3xl font-bold"> {currentValue}</p>
           <p className="space-x-2 text-lg font-bold">
@@ -29,6 +29,6 @@ export default function Summary({ currentDurationLabel = null, currentValue, sta
         </li>
       </ul>
       <div className="z-3 fixed bottom-0 left-0 w-full px-2 text-sm text-white bg-gray-900">最後更新：{endDate}</div>
-    </>
+    </div>
   );
 }
