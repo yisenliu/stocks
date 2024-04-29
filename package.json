@@ -67,6 +67,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "node server.cjs",
+    "node version": "nvm use 18.17.1",
     "lint": "eslint . --ext .js,.jsx",
     "clean-cache": "yarn cache clean",
     "buildForGithub": "cross-env GithubPages=true yarn run build",
