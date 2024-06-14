@@ -8,8 +8,9 @@ export default function useTaiwanStockNews(ticker, token = null) {
   const params = {
     dataset: 'TaiwanStockNews',
     data_id: ticker,
-    start_date: moment().subtract(90, 'days').format('YYYY-MM-DD'),
-    end_date: today,
+    // start_date: moment().subtract(90, 'days').format('YYYY-MM-DD'),
+    // end_date: today,
+    start_date: today,
   };
   const paramsStr = concatParams(token ? { ...params, token } : params);
   const result = useFetch(
