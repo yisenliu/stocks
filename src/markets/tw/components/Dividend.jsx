@@ -27,8 +27,13 @@ const stripTableStyles = css`
 `;
 
 function DividendGroup({ year, dividends }) {
-  let total = dividends.reduce((acc, current) => acc + current.value, 0);
-  total = parseFloat(total).toFixed(2);
+  let total = dividends.reduce((acc, current) => {
+    // 避免浮點數的精密度問題
+    return Math.round((acc + current.value) * 1000) / 1000;
+  }, 0);
+  const decimalPlaces = total.toString().split('.')[1].length;
+  const fixedLen = decimalPlaces <= 3 ? decimalPlaces : 3;
+  total = parseFloat(total).toFixed(fixedLen);
 
   return (
     <BlockSection>
